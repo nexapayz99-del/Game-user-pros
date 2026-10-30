@@ -1,0 +1,4 @@
+Pyrogram==2.0.106
+TgCrypto==1.2.5
+motor==3.6.0
+python-dotenv==1.0.1

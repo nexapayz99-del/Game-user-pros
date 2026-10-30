@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+*.session
+*.session-journal
+*.session_string
+.game-user.lock
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.zip
+*.log

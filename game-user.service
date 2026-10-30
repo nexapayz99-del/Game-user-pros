@@ -1,0 +1,22 @@
+[Unit]
+Description=Game User Pro (Telegram control bot + game runner)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/Game-user-pro
+ExecStart=/root/Game-user-pro/.venv/bin/python /root/Game-user-pro/app.py
+Environment=PYTHONUNBUFFERED=1
+Restart=on-failure
+RestartSec=10
+# 2 = bad configuration, 4 = another copy holds the lock: restarting cannot fix these
+RestartPreventExitStatus=2 4
+TimeoutStopSec=30
+KillSignal=SIGTERM
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
